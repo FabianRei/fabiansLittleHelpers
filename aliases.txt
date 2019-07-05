@@ -1,0 +1,1 @@
+alias server="ssh -i /root/.ssh/id_server -t fabi@server.stanford.edu 'tmux a -t fabian; bash -l'"
