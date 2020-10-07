@@ -1,0 +1,11 @@
+# copy ssh key to server
+ssh-copy-id -i ./id_ws1.pub "-p 22 user@host"
+# ssh - input password automatically
+apt-get install sshpass
+sshpass -p 'password" ssh user@host
+sshpass -f 'path_file_pw_first_line' ssh user@host
+# path ssh config files:
+/etc/ssh/ssh_config /etc/ssh/sshd_config  
+# generate ssh keys -t rsa is default -b 2048 (default) is more than sufficient
+ssh-keygen -f name
+

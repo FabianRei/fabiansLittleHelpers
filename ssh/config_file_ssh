@@ -1,0 +1,35 @@
+# move to ~/.ssh/ and name "config"
+# mkdir ~/.ssh/multiplexing
+Host *
+     ControlMaster auto
+     ControlPersist yes
+     ControlPath ~/.ssh/multiplexing/%C
+     ForwardAgent yes
+     ServerAliveInterval 60
+     ServerAliveCountMax 10
+
+Host mdc
+     User freith
+     HostName max-login1.mdc-berlin.net
+     IdentityFile   ~/.ssh/id_ws1
+     ProxyCommand ssh mdc-login -W %h:%p
+     Port 22
+
+Host mdc-login
+     User freith
+     HostName ssh1.mdc-berlin.de
+     IdentityFile   ~/.ssh/id_ws1
+     Port 22
+
+Host bih
+     User freith_m
+     HostName med-login2.bihealth.org
+     IdentityFile ~/.ssh/id_ws1
+     ProxyCommand ssh mdc-login -W %h:%p
+     Port 22
+
+Host ws2
+     User ws1
+     HostName 141.20.65.111
+     IdentityFile ~/.ssh/id_ws1
+     Port 2222
