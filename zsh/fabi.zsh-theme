@@ -4,7 +4,7 @@ COMMON_COLORS_GIT_STATUS_UNSTAGED=yellow
 COMMON_COLORS_GIT_PROMPT_SHA=green
 
 # PROMPT="%(?:%{$fg_bold[green]%}:%{$fg_bold[red]%})"
-PROMPT='%{$fg[cyan]%}%~%{$reset_color%} '
+PROMPT='$(common_host)%{$fg[cyan]%}%~%{$reset_color%} '
 # Right Prompt
 RPROMPT='$(common_git_status)'
 
@@ -43,7 +43,7 @@ common_host() {
     me="%n"
   fi
   if [[ -n $me ]]; then
-    echo "%{$fg[$COMMON_COLORS_HOST_ME]%}$me%{$reset_color%}:"
+    echo "%{$fg[$COMMON_COLORS_HOST_ME]%}$me%{$reset_color%} "
   fi
 }
 
