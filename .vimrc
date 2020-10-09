@@ -7,5 +7,8 @@ inoremap <C-j> <Esc>:w<cr>
 noremap <C-j> :w<cr>
 noremap<space>q :q<cr>			\
 noremap<space>d :q!<cr>
-noremap cc :%y+
-noremap yy "+yy
+" noremap cc :%y+
+" noremap yy "+yy
+:set ignorecase
+:set smartcase
+:set background=dark
